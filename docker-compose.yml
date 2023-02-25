@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  app:
+    image: "${APP_IMAGE:-catalog_app:latest}"
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    restart: always
+    command: uvicorn src.api.main:app --reload --host 0.0.0.0 --port 80
+    ports:
+      - 8000:80
+    depends_on:
+      - db
+
+  db:
+    image: postgres
+    container_name: db
+    restart: always
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+    ports:
+      - "15489:5432"

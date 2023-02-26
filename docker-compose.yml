@@ -7,11 +7,13 @@ services:
       context: .
       dockerfile: docker/Dockerfile
     restart: always
-    command: uvicorn src.api.main:app --reload --host 0.0.0.0 --port 80
+    command: uvicorn app.main:app --host 0.0.0.0 --port 80
     ports:
-      - 8000:80
+      - 9000:80
     depends_on:
       - db
+    volumes:
+      - ./:/app
 
   db:
     image: postgres

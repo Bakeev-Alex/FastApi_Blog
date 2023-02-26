@@ -3,9 +3,8 @@ FROM python:3.10-alpine
 ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1
 
-RUN apt-get update
 RUN apk add --no-cache \
-    curl `
+    curl
 
 
 RUN pip install --upgrade pip
@@ -17,4 +16,4 @@ WORKDIR /app/
 RUN poetry install -vv
 
 COPY / /app/
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
+#CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]

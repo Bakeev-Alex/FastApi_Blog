@@ -8,6 +8,7 @@ authors = ["a.bakeev  <a.bakeev@idaproject.com>"]
 python = "^3.10"
 fastapi = "^0.89.1"
 uvicorn = {extras = ["standard"], version = "^0.20.0"}
+SQLAlchemy = "^2.0.5"
 
 [tool.poetry.dev-dependencies]
 

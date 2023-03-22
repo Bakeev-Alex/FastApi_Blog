@@ -1,15 +1,18 @@
 ## Тестовый проект на FastApi  
 
-Запуск:  
+### Запуск:  
 
 ```
 docker-compose build
 docker-compose up --remove-orphans -d --build
 ```
 
+### Запуск web интерфейса 
+http://localhost:9000/docs
+
 ---
 
-File .env
+### File .env
 ```
 POSTGRES_USERNAME=postgres
 POSTGRES_PASSWORD=postgres
@@ -20,7 +23,7 @@ POSTGRES_PORT=15489
 
 ---
 
-Используемые инструменты:
+### Используемые инструменты:
 * Виртуальное окружение - poetry
 * python 3.10
 * FastApi 0.89.1
